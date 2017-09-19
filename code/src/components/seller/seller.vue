@@ -57,7 +57,7 @@
   				</ul>
   			</div>
   		</div>
-  		<split></split>
+  		
   		<div class="info">
   			<h1 class="title border-1px">商家信息</h1>
   			<ul>
