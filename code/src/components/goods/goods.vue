@@ -47,6 +47,7 @@
   import shopcart from 'components/shopcart/shopcart'
   import cartcontrol from 'components/cartcontrol/cartcontrol'
   import food from 'components/food/food'
+  import data from '../../../data.json'
 
   const ERR_OK=0;
   export default {
@@ -87,18 +88,12 @@
   		}
   	},
   	created() {
-  		this.classMap=['decrease','discount','guarantee','invoice','special']
-  		this.$http.get('/api/goods').then((response)=>{
-	      response=response.body;
-	      if (response.erron===ERR_OK) {
-	         this.goods=response.data;
-	         this.$nextTick(()=>{
-	         	this._initScroll();
-	         	this._calculateHeight();
-  			   })
-	         
-	      };
-	    })
+      this.classMap=['decrease','discount','guarantee','invoice','special']
+      this.goods=data.goods;
+      this.$nextTick(()=>{
+        this._initScroll();
+        this._calculateHeight();
+      })
   	},
   	methods:{
   		selectMenu(index,event) {

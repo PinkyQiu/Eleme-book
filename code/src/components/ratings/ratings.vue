@@ -58,6 +58,8 @@
   import star from 'components/star/star';
   import ratingselect from 'components/ratingselect/ratingselect';
   import split from 'components/split/split';
+  import data from '../../../data.json'
+
   const ALL=2;
   const ERR_OK=0;
   export default {
@@ -74,17 +76,12 @@
   		}
   	},
   	created() {
-  		this.$http.get('/api/ratings').then((response)=>{
-	      response=response.body;
-	      if (response.erron===ERR_OK) {
-	         this.ratings=response.data;
-	         this.$nextTick(()=>{
-  					 this.scroll=new BScroll(this.$els.ratings,{
-	  					 click:true
-	  				}) 					
-  				})
-	      };
-	    })
+  		this.ratings=data.ratings;
+      this.$nextTick(()=>{
+				this.scroll=new BScroll(this.$els.ratings,{
+					click:true
+				})
+			})	
   	},
   	methods:{
   		needShow(type,text) {

@@ -19,6 +19,7 @@
 <script>
 import {urlParse} from 'common/js/util';
 import header from './components/headers/header.vue'
+import data from '../data.json'
 const ERR_OK=0
 
 export default {
@@ -33,12 +34,7 @@ export default {
     }
   },
   created() {
-    this.$http.get('/api/seller?id='+this.seller.id).then((response)=>{
-      response=response.body;
-      if (response.erron===ERR_OK) {
-         this.seller=Object.assign({},this.seller,response.data);
-      };
-    })
+     this.seller=Object.assign({},this.seller,data.seller);
   },
   components: {
     'v-header': header
