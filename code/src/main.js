@@ -26,3 +26,8 @@ router.map({
 })
 router.start(app, '#app')
 router.go('/goods')
+
+// 兼容 better-scroll 从pc模式切换到手机模式不能滚动
+window.addEventListener('resize', () => {
+  window.location.reload()
+}, false)

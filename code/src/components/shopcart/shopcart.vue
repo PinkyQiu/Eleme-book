@@ -290,7 +290,7 @@
 				.desc
 					display:inline-block
 					vertical-align:top
-					margin:12px 0 0 12px
+					margin:12px 0 0 4px
 					line-height:24px
 					color:rgba(255,255,255,0.4)
 					font-size:10px
